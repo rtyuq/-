@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meig Master | الميج ماستر</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #333; }
+    header { background: #007bff; color: white; padding: 20px; text-align: center; }
+    nav { background: #0056b3; display: flex; justify-content: center; padding: 10px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; display: none; }
+    h2 { color: #007bff; }
+    footer { background: #343a40; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    .services, .portfolio { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .lang-toggle { margin: 20px auto; text-align: center; }
+    .lang-toggle button { padding: 10px 20px; margin: 5px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="site-title">Meig Master | الميج ماستر</h1>
+    <p id="site-subtitle">Interior Design by Eng. Ahmed Habib | تصميم وتنفيذ ديكور بإدارة المهندس أحمد حبيب</p>
+  </header>
+
+  <div class="lang-toggle">
+    <button onclick="switchLang('en')">English</button>
+    <button onclick="switchLang('ar')">العربية</button>
+  </div>
+
+  <nav>
+    <a href="#about" class="nav-en">About</a>
+    <a href="#services" class="nav-en">Services</a>
+    <a href="#portfolio" class="nav-en">Portfolio</a>
+    <a href="#contact" class="nav-en">Contact</a>
+    
+    <a href="#about" class="nav-ar">من نحن</a>
+    <a href="#services" class="nav-ar">خدماتنا</a>
+    <a href="#portfolio" class="nav-ar">معرض الأعمال</a>
+    <a href="#contact" class="nav-ar">تواصل معنا</a>
+  </nav>
+
+  <section id="about-en">
+    <h2>About Us</h2>
+    <p>Meig Master, led by Engineer Ahmed Habib, specializes in interior design and execution for homes, offices, retail shops, and more. We are known for precision, creativity, and premium results that satisfy our clients' taste.</p>
+  </section>
+  <section id="about-ar">
+    <h2>من نحن</h2>
+    <p>شركة الميج ماستر بإدارة المهندس أحمد حبيب، متخصصة في تصميم وتنفيذ الديكور الداخلي للمنازل، المكاتب، المحلات التجارية، والمزيد. نتميز بالدقة، والإبداع، وتنفيذ راقٍ يرضي ذوق عملائنا.</p>
+  </section>
+
+  <section id="services-en">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">Professional Interior Design</div>
+      <div class="card">Full Project Execution</div>
+      <div class="card">Decor Consultation</div>
+    </div>
+  </section>
+  <section id="services-ar">
+    <h2>خدماتنا</h2>
+    <div class="services">
+      <div class="card">تصميم داخلي احترافي</div>
+      <div class="card">تنفيذ وتشطيب كامل</div>
+      <div class="card">استشارات ديكورية</div>
+    </div>
+  </section>
+
+  <section id="portfolio-en">
+    <h2>Portfolio</h2>
+    <div class="portfolio">
+      <div class="card">Modern Home Design</div>
+      <div class="card">Office Layout Design</div>
+      <div class="card">Retail Shop Finishing</div>
+    </div>
+  </section>
+  <section id="portfolio-ar">
+    <h2>معرض الأعمال</h2>
+    <div class="portfolio">
+      <div class="card">صورة منزل مودرن</div>
+      <div class="card">تصميم مكتب عملي</div>
+      <div class="card">تشطيب محل تجاري</div>
+    </div>
+  </section>
+
+  <section id="contact-en">
+    <h2>Contact Us</h2>
+    <p>Phone: 0571123257</p>
+    <p>Email: alkhfgjfhfygfgg@gmail.com</p>
+    <p><a href="https://wa.me/966571123257">Chat on WhatsApp</a></p>
+  </section>
+  <section id="contact-ar">
+    <h2>تواصل معنا</h2>
+    <p>رقم الهاتف: 0571123257</p>
+    <p>البريد الإلكتروني: alkhfgjfhfygfgg@gmail.com</p>
+    <p><a href="https://wa.me/966571123257">راسلنا على واتساب</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Meig Master | الميج ماستر - جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    function switchLang(lang) {
+      const allSections = document.querySelectorAll("section");
+      const navEn = document.querySelectorAll(".nav-en");
+      const navAr = document.querySelectorAll(".nav-ar");
+      allSections.forEach(sec => sec.style.display = "none");
+      if (lang === 'en') {
+        document.querySelectorAll('[id$="-en"]').forEach(sec => sec.style.display = "block");
+        navEn.forEach(n => n.style.display = 'inline');
+        navAr.forEach(n => n.style.display = 'none');
+      } else {
+        document.querySelectorAll('[id$="-ar"]').forEach(sec => sec.style.display = "block");
+        navEn.forEach(n => n.style.display = 'none');
+        navAr.forEach(n => n.style.display = 'inline');
+      }
+    }
+    switchLang('ar');
+  </script>
+</body>
+</html>
